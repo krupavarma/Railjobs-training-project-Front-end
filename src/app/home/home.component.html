@@ -1,0 +1,62 @@
+<div class="section">
+  <div class="container matter">
+   
+      <h1>Rail Jobs Info</h1><br>
+      <p>We help you to fins a job,to find a candidate,<br> to find domestic and international new rail projects and tenders</p><br>
+      <!-- <button class="btn btn-class-primary">Register</button> -->
+      <button mat-raised-button color="primary">Register</button>
+
+
+  </div>
+</div>
+
+
+<!-- section--2 -->
+
+  <div fxLayout="row" fxLayoutAlign="space-around center" style="background-color:#f6f5fa">
+    <h3>Departmentsin Railway</h3>
+    <h3>Railway Jobs in India</h3>
+    <h3>International Rail Jobs</h3>
+    </div>
+
+
+
+<div class="container-fluid">
+  <div class="row text-center section-padding register">
+    <h1 style="color:#8262D0">Register Now</h1>
+    <h4 class="text-padding">We help you to find a Job, to find a Candiate, to find Domestic & <br> International New Rail Projects & Tenders</h4>
+  </div>
+</div> 
+<!-- {{userkey}} -->
+ <div class="container">
+  <div class="row section-padding">
+    <div class="col-md-3" *ngFor="let keys of card">
+      <div class="card maincard" style="width: 20rem;border-radius:8px;">
+        <div class="card-block carddisplay">
+          <h3 class="card-title text-padding section-padding">{{keys.name}}</h3><br>
+          <p class="card-text text-padding">{{keys.content}}</p><br>
+          <a><button mat-raised-button color="primary" text-padding>{{keys.btn}}</button></a><br><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+ <div class="container-fluid">
+  <div class="row text-center section-padding aboutrail" style="background-color:#f6f5fa">
+    <h1>About Rail Jobs</h1>
+    <h4 class="text-padding">We help you to find a Job, to find a Candiate, to find Domestic & <br> International New Rail Projects & Tenders</h4>
+    <div class="col-md-6 section-padding" *ngFor="let data of card1">
+      <div class="card1">
+        <div class="card-block infocard">
+          <h2 class="card-title text-padding">{{data.name}}</h2><br>
+          <p class="card-text text-padding">{{data.content}}</p><br>
+          <a><button mat-raised-button class="btn btn-class-primary text-padding">{{data.btn}}</button></a><br><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+
+<app-footer></app-footer>

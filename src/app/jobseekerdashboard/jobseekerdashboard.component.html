@@ -1,0 +1,27 @@
+
+  <div class="logbtn" fxLayout="row" fxLayoutAlign="end center" >
+  <button mat-raised-button color="primary" (click)=logout()>Logout</button>
+  </div>
+
+  <div class="container-fluid dashhead">
+<mat-button-toggle-group #group="matButtonToggleGroup" class="tg" value="jobslist">
+  <mat-button-toggle value="jobslist">
+    <p>Jobs List</p>
+  </mat-button-toggle>
+  <mat-button-toggle value="appliedlist">
+   <p>Applied List</p>
+  </mat-button-toggle>
+</mat-button-toggle-group>
+<div class="pull-right">
+  <h3><a routerLink="/jobseekerprofile" style="color:white">Profile</a></h3>
+  </div>
+  </div>
+<div class="container-fluid">
+  <div *ngIf="group.value=='jobslist'">
+    <app-jobseekerjoblist></app-jobseekerjoblist>
+  </div>
+     <div *ngIf="group.value=='appliedlist'">
+    <app-jobseekerappliedlist></app-jobseekerappliedlist>
+  </div>
+</div>
+

@@ -1,0 +1,31 @@
+<mat-card>
+  <mat-card-header>
+  </mat-card-header>
+
+  <mat-card-content>
+   <table class="table table-striped">
+  <thead>
+    <tr style="text-align:center">
+      <th scope="col">Company Name</th>
+      <th scope="col">Location</th>
+      <th scope="col">Recruiter Mobile</th>
+      <th scope="col">position</th>
+      <th scope="col">Status</th>
+    </tr>
+    <tr *ngFor='let data of details'>
+      
+      <td>{{data.companyName}}</td>
+      <td>{{data.location}}</td>
+      <td>{{data.recruiterContactNumber}}</td>
+      <td>{{data.position}}</td>
+      <td><button mat-raised-button color="primary">Applied</button></td>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+  </mat-card-content>
+  <mat-card-actions>
+  
+  </mat-card-actions>
+</mat-card>

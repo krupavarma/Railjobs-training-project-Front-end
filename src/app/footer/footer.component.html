@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 col-sm-3 footcontent" *ngFor="let data of content">
+      <h3>{{data.heading}}</h3>
+      <ul *ngFor="let ele of data.list">
+        <li><a>{{ele.name}}</a></li>
+        </ul>
+    </div>
+  </div>
+</div>

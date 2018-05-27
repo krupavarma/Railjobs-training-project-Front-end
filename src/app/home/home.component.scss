@@ -1,0 +1,91 @@
+
+.section{
+    background-image: url('../../assets/images/homebg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+.matter{
+    padding-top: 260px;
+    h1{
+        font-weight: bold;
+    }
+   h1,p{
+        color:white;
+    }
+    button{
+        border-radius: 50px;
+        background-color: #8262D0;
+        color:white;
+        font-weight: 400;
+        width: 18%;
+    }
+}
+.register{
+    margin-bottom:20px;
+}
+.card{
+    box-shadow: 1px 1px 1px 1px grey;
+    // border: 1px solid grey;
+}
+.carddisplay{
+    margin-bottom:20px;
+    // background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0VxVd7-RuLjeypKwsHEJDED_7d9XyBIvf8x0-QdF4WZbdqXX_WA");
+    h3,p,a{
+        padding-left: 10px;
+        // color:white
+    }
+    h3{
+        margin-top: 10px;
+        padding-top: 17px;
+         font-weight: bold;
+    }
+    a{
+        button{
+        border-radius: 50px;
+        background-color: #8262D0;
+        color:white;
+        font-weight: 400;
+        // min-width: 18%;
+    }
+    }
+
+}
+.aboutrail{
+   
+    margin-top: 20px;
+    h1{
+        color:#8262D0;
+        font-weight: bold;
+    }
+}
+.infocard{
+    //  background-image:url("http://s3.amazonaws.com/tgc-blogs/wp-content/uploads/sites/26/2017/01/12171708/outdoors_railroad_tracks_foliage_hd-wallpaper-936158.jpg");
+     h2,p,a{
+        //  color:white;
+     }
+     a{
+        button{
+        border-radius: 50px;
+        background-color: #8262D0;
+        color:white;
+        font-weight: 400;
+        min-width: 18%;
+        outline: 0px;
+    }
+}
+}
+@media (max-width: 992px) { 
+.maincard{
+
+    // width: 50rem;
+    float: left;
+    margin-left: 95px;
+    margin-top: 10px;
+
+}
+.carddisplay{
+    // width: 30rem;
+}
+ }

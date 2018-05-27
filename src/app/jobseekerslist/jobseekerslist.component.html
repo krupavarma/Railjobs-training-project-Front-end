@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-header>
+  </mat-card-header>
+
+  <mat-card-content>
+   <table class="table table-striped">
+  <thead>
+    <tr style="text-align:center">
+      <th scope="col">Jobseeker Email</th>
+      <th scope="col">Industry</th>
+      <th scope="col">Position</th>
+
+    </tr>
+    <tr *ngFor='let data of details'>
+      
+      <td>{{data.jobseekerEmail}}</td>
+      <td>{{data.industry}}</td>
+    <td>{{data.position}}</td>
+    
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+  </mat-card-content>
+  <mat-card-actions>
+  
+  </mat-card-actions>
+</mat-card>

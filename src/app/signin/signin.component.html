@@ -1,0 +1,76 @@
+<div class="section">
+  <main id="page-content">
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <!--class="row center-xs parent-container padding"-->
+      <div style="max-width:460px;">
+        <div fxLayout="row" fxLayoutAlign="center center" class="text">
+
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title class="padding-section">
+                <h1 style="text-align:center">SIGN IN</h1>
+              </mat-card-title>
+              <mat-card-subtitle class="padding-section">
+                <mat-button-toggle-group #group="matButtonToggleGroup" value="jobseeker">
+                  <mat-button-toggle value="jobseeker">
+                    <div>Job Seeker</div>
+                  </mat-button-toggle>
+                  <mat-button-toggle value="recruiter">
+                    <div>Recruiter</div>
+                  </mat-button-toggle>
+                </mat-button-toggle-group>
+                <!-- <div class="example-selected-value">Selected value: {{group.value}}</div> -->
+              </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <!-- job seeker form -->
+              <form action="" role="form" #f1="ngForm" (ngSubmit)="jobSeeker(f1)">
+                <div *ngIf="group.value=='jobseeker'" class="example-container">
+                  <mat-form-field>
+                    <input matInput placeholder="Job Seeker Email" [(ngModel)]="f1.email" ngControl="email" name="email" required>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput [(ngModel)]="f1.password" ngControl="password" name="password" placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </mat-form-field>
+                  <mat-card-actions>
+                    <button mat-raised-button color="primary" (click)=signin(group.value)>Signin</button>
+
+                  </mat-card-actions>
+                  <div fxLayout="row" fxLayoutAlign="space-between center" class="padding-section">
+                    <span><a (click)="forgot()">Forgot Your Password?</a></span>
+                    <span><a routerLink="../jobseekerregistration">New User?</a></span>
+                  </div>
+                </div>
+              </form>
+              <!-- recruiter form -->
+              <form action="" role="form" #f2="ngForm" (ngSubmit)="recruiter(f2)">
+                <div *ngIf="group.value=='recruiter'" class="example-container">
+                  <mat-form-field>
+                    <input matInput placeholder="Recruiter Email" [(ngModel)]="f2.email" ngControl="email"
+                      name="email">
+                    <!-- <mat-error *ngIf='signInForm.get('email').touched && signInForm.get('email').invalid'>
+                      <mat-error *ngIf="email.hasError('required')">Email is required</mat-error>
+                    </mat-error> -->
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput [(ngModel)]="f2.password" ngControl="password" name="password" placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </mat-form-field>
+                  <mat-card-actions>
+                    <button mat-raised-button color="primary" (click)=signin(group.value)>Signin</button><br>
+                  </mat-card-actions>
+                  <div fxLayout="row" fxLayoutAlign="space-between center" class="padding-section">
+                    <span><a (click)="forgot()">Forgot Your Password?</a></span>
+                    <span><a routerLink="../recruiterregistration">New User?</a></span>
+                  </div>
+                </div>
+              </form>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</div>

@@ -1,0 +1,112 @@
+
+<div class="section">
+  <main id="page-content">
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <!--class="row center-xs parent-container padding"-->
+      <div style="max-width:460px;">
+
+
+
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title class="padding-section">
+              <h2 style="text-align:center">RECRUITER REGISTRATION</h2>
+            </mat-card-title>
+            <mat-card-subtitle class="padding-section">
+                <div fxLayout="row" fxLayoutAlign="center center" >
+              <mat-button-toggle-group #group="matButtonToggleGroup" value="basic">
+                <mat-button-toggle value="basic">
+                 <p>Basic details</p>
+                </mat-button-toggle>
+                <mat-button-toggle value="personal">
+               <p>Personal details</p>
+                </mat-button-toggle>
+                <mat-button-toggle value="professional">
+                 <p>Professional</p>
+                </mat-button-toggle>
+                
+              </mat-button-toggle-group>
+              </div>
+              <!-- <div class="example-selected-value">Selected value: {{group.value}}</div> -->
+            </mat-card-subtitle>
+          </mat-card-header>
+         <mat-card-content>
+           <!-- Basic details form -->
+            <form action="" role="form" #f1="ngForm" (ngSubmit)="basic(f1)">
+              <div *ngIf="group.value=='basic'" class="example-container">
+                <mat-form-field>
+                  <input matInput placeholder="Recruiter Email" [(ngModel)]="f1.email" ngControl="email" name="email" required>
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput [(ngModel)]="f1.password" ngControl="password" name="password" placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+                  <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </mat-form-field>
+                  <mat-form-field>
+                  <input matInput placeholder="userName" [(ngModel)]="f1.userName" ngControl="userName" name="userName" required>
+                </mat-form-field>
+                  <mat-form-field>
+                  <input matInput placeholder="Mobile" [(ngModel)]="f1.mobile" ngControl="mobile" name="mobile" required>
+                </mat-form-field>
+                <mat-card-actions>
+                   <button mat-fab  color="primary" (click)="group.value='personal';basic(f1);" [disabled]="!f1.form.valid"><mat-icon><i class="material-icons">send</i></mat-icon></button> 
+                  <!-- <md-icon><i class="material-icons">send</i></md-icon> -->
+                </mat-card-actions>
+                
+              </div>
+              <!-- Personal details form -->
+            </form>
+             <form action="" role="form" #f2="ngForm" (ngSubmit)="personal(f2)">
+              <div *ngIf="group.value=='personal'" class="example-container">
+                <mat-form-field>
+                  <input matInput placeholder="Your HomeTown" [(ngModel)]="f2.homeTown" ngControl="homeTown" name="homeTown">
+                </mat-form-field>
+                 <mat-form-field>
+                  <input matInput placeholder="Degree Qualification" [(ngModel)]="f2.qualification" ngControl="qualification" name="qualification" required>
+                </mat-form-field>
+                  <mat-form-field>
+                  <input matInput placeholder="Marital Status(Marries / unMarried)" [(ngModel)]="f2.maritalStatus" ngControl="maritalStatus" name="maritalStatus" required>
+                </mat-form-field>
+                  <mat-form-field>
+                  <input matInput placeholder="Nationality" [(ngModel)]="f2.nationality" ngControl="nationality" name="nationality" required>
+                </mat-form-field>
+                <mat-card-actions>
+                  <button mat-fab  color="primary" (click)="group.value='professional';personal(f2);" [disabled]="!f2.form.valid"><mat-icon><i class="material-icons">send</i></mat-icon></button> 
+                </mat-card-actions>
+              </div>
+            </form>
+            
+            
+            <!-- Professional details -->
+             <form #f3="ngForm" (ngSubmit)="professional(f3)">
+              <div *ngIf="group.value=='professional'" class="example-container">
+                <mat-form-field>
+                  <input matInput placeholder="Company Location" [(ngModel)]="f3.companyLocation" ngControl="companyLocation" name="companyLocation">
+                </mat-form-field>
+                 <mat-form-field>
+                  <input matInput placeholder="Years of Experience in last / current" [(ngModel)]="f3.experience" ngControl="experience" name="experience" required>
+                </mat-form-field>
+                  <mat-form-field>
+                  <input matInput placeholder="Company Name" [(ngModel)]="f3.companyName" ngControl="companyName" name="companyName" required>
+                </mat-form-field>
+                  <mat-form-field>
+                  <input matInput placeholder="Department" [(ngModel)]="f3.department" ngControl="department" name="department" required>
+                </mat-form-field>
+                <mat-card-actions>
+                  <button mat-raised-button color="primary" type="submit" [disabled]="!f3.form.valid">Register</button><br>
+                </mat-card-actions>
+                
+              </div>
+            </form> 
+          </mat-card-content> 
+        </mat-card>
+
+
+
+
+
+
+      </div>
+    </div>
+  </main>
+</div>
+

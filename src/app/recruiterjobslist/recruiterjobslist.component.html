@@ -1,0 +1,31 @@
+<mat-card>
+  <mat-card-header>
+  </mat-card-header>
+
+  <mat-card-content>
+   <table class="table table-striped">
+  <thead>
+    <tr style="text-align:center">
+      <th scope="col">Company Name</th>
+      <th scope="col">Industry</th>
+      <th scope="col">Position</th>
+      <th scope="col">Location</th>
+    </tr>
+    <tr *ngFor='let data of ele'>
+      <td>{{data.jobDetails.companyName}}</td>
+      <td>{{data.jobDetails.industry}}</td>
+      <td>{{data.jobDetails.position}}</td>
+      <td>{{data.jobDetails.location}}</td>
+    </tr>
+  </thead>
+  <tbody>
+    <button mat-mini-fab color="primary" (click)="addJob()">
+    <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>
+  </button>
+  </tbody>
+</table>
+  </mat-card-content>
+  <mat-card-actions>
+  
+  </mat-card-actions>
+</mat-card>
