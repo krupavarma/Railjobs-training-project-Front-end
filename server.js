@@ -2,7 +2,7 @@ var http            = require('http');
 var express         = require('express');
 var router          = express();
 var server          = http.createServer(router);
-router.use(express.static(__dirname + '/dist/browser'));
+router.use(express.static(__dirname + '/dist'));
 process.env.NODE_PATH = __dirname;
 var server_port =  5001
 var server_ip_address = '0.0.0.0';
